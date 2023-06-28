@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="shortcut icon" href="Imgs/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <span class="header_title">📚 Library</span>
+      <span id="btn_open_pop-up">+ Add </span>
+    </header>
+    <div id="pop-up_form">
+      <form id="form" action="script.js">
+        <div id="header-pop-up">
+          <span>Add new book</span>
+          <span class="btn_close_pop-up">X</span>
+        </div>
+        <input
+          class="input"
+          type="text"
+          id="title"
+          name="title"
+          required
+          placeholder="Title"
+        />
+        <input
+          class="input"
+          type="text"
+          id="author"
+          name="author"
+          placeholder="Author"
+        />
+        <input
+          class="input"
+          type="number"
+          id="pages"
+          name="pages"
+          placeholder="Pages"
+        />
+
+        <div class="is-read">
+          <label for="is-read">Have you read it?</label>
+          <input class="checkbox" type="checkbox" id="status" name="status" />
+        </div>
+        <button class="btn_form_addbook" type="submit">Add</button>
+      </form>
+    </div>
+    <main class="books_grid"></main>
+    <script src="script.js"></script>
+  </body>
+</html>

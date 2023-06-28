@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+  --color: #3a96dd;
+  --text: #3d3d3d;
+  --gray: #8c8c8c;
+  --red: #dd3a3a;
+  --white: #e0e0e0;
+  --border: #d6d6d6;
+}
+/* ------------------------------------------------*/
+.readBtn,
+.removeBtn,
+.btn_close_pop-up,
+#btn_open_pop-up {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+
+/*------------------------------------------------*/
+/*           Cabeçalho                            */
+/*------------------------------------------------*/
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  background-color: var(--color);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+.header_title {
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/*------------------------------------------------*/
+/*           Pop-up                               */
+/*------------------------------------------------*/
+#pop-up_form {
+  visibility: hidden;
+  width: 17rem;
+  height: 20rem;
+  box-shadow: 3px 7px 11px 0px var(--border);
+  background-color: #fafafa;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 8.5rem);
+}
+#form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+#header-pop-up {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  width: 85%;
+}
+.input {
+  width: 90%;
+  padding: 10px;
+  font-size: 1.1rem;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.btn_form_addbook {
+  width: 90%;
+  background-color: var(--color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/*------------------------------------------------*/
+/*           Estante                              */
+/*------------------------------------------------*/
+.books_grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 100%;
+}
+.cards {
+  width: 270px;
+  padding: 10px;
+  box-shadow: 3px 5px 10px var(--border);
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+.title {
+  display: block;
+}
+.author,
+.pages {
+  color: var(--gray);
+  font-size: 1rem;
+}
+.bookdata,
+.bookactions {
+  display: flex;
+  justify-content: space-between;
+}
