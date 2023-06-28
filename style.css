@@ -101,7 +101,8 @@ header {
   width: 100%;
 }
 .cards {
-  width: 270px;
+  min-width: 200px;
+  max-width: 400px;
   padding: 10px;
   box-shadow: 3px 5px 10px var(--border);
   border: 2px solid #e0e0e0;
