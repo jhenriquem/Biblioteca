@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library</title>
+    <title>Biblioteca</title>
     <link rel="shortcut icon" href="Imgs/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <span class="header_title">📚 Library</span>
-      <span id="btn_open_pop-up">+ Add </span>
+      <span class="header_title"> Biblioteca</span>
+      <span id="btn_open_pop-up">+</span>
     </header>
     <div id="pop-up_form">
       <form id="form" action="script.js">
         <div id="header-pop-up">
-          <span>Add new book</span>
+          <span>Adicionar novo livro</span>
           <span class="btn_close_pop-up">X</span>
         </div>
         <input
@@ -24,28 +24,28 @@
           id="title"
           name="title"
           required
-          placeholder="Title"
+          placeholder="Título"
         />
         <input
           class="input"
           type="text"
           id="author"
           name="author"
-          placeholder="Author"
+          placeholder="Autor"
         />
         <input
           class="input"
           type="number"
           id="pages"
           name="pages"
-          placeholder="Pages"
+          placeholder="Páginas"
         />
 
         <div class="is-read">
-          <label for="is-read">Have you read it?</label>
+          <label for="is-read">Você leu ?</label>
           <input class="checkbox" type="checkbox" id="status" name="status" />
         </div>
-        <button class="btn_form_addbook" type="submit">Add</button>
+        <button class="btn_form_addbook" type="submit">Adicionar</button>
       </form>
     </div>
     <main class="books_grid"></main>

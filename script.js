@@ -12,7 +12,7 @@ let myLibrary = [
     status: true,
   },
 ];
-let array_icons = ['📘', '📗', '📕', '📙'];
+const array_color = ['#F53E4A', '#F4812E', '#2EA0C4', '#F5C312', '#6EB970'];
 
 window.onload = Bookcase();
 
@@ -51,8 +51,6 @@ function AddBookToLibrary(event) {
   let pages = form.pages.value;
   let status = form.status.checked;
   //---------------------
-
-  //---------------------
   if (name === '') {
   } else {
     event.preventDefault();
@@ -61,7 +59,9 @@ function AddBookToLibrary(event) {
 
     Bookcase();
 
+    // Redefine o valor de visibility para hidden
     document.querySelector('#pop-up_form').style.visibility = 'hidden';
+    // voltar os valores dos inputs para " "
     form.title.value = '';
     form.author.value = '';
     form.pages.value = '';
@@ -81,29 +81,27 @@ function Bookcase() {
 
 // Função responsavel por criar o cards dos livros
 function createCardBook(book, library) {
-  const bookDiv = document.createElement('div');
+  // Variavel que define a cor da bordar e o icon do card
+  let n = Math.floor(Math.random() * 5);
 
+  // Card dos livros
+  const bookDiv = document.createElement('div');
+  bookDiv.classList.add('book');
+  bookDiv.setAttribute('id', myLibrary.indexOf(book));
+  bookDiv.classList.add('cards');
+  bookDiv.setAttribute('style', `border-left: 5px solid ${array_color[n]}`);
+
+  //--------------------------------------------------
+  //    titulo , nome do autor e numero de paginas
+  //--------------------------------------------------
   const bookdata = document.createElement('div');
   bookdata.classList.add('bookdata');
-
-  const bookactions = document.createElement('div');
-  bookactions.classList.add('bookactions');
 
   const titleDiv = document.createElement('label');
   const authDiv = document.createElement('span');
   const pageDiv = document.createElement('span');
 
-  const removeBtn = document.createElement('img');
-  const readBtn = document.createElement('input');
-
-  //------------------------------------------------------
-  bookDiv.classList.add('book');
-  bookDiv.setAttribute('id', myLibrary.indexOf(book));
-  bookDiv.classList.add('cards');
-
-  //------------------------------------------------------
-  titleDiv.innerHTML =
-    array_icons[Math.floor(Math.random() * 4)] + ' ' + book.title;
+  titleDiv.innerHTML = book.title;
   titleDiv.classList.add('title');
   bookDiv.appendChild(titleDiv);
 
@@ -115,9 +113,17 @@ function createCardBook(book, library) {
   pageDiv.classList.add('pages');
   bookdata.appendChild(pageDiv);
 
+  //-------------------------------------------------------
+  //-------------------------------------------------------
+  const bookactions = document.createElement('div');
+  bookactions.classList.add('bookactions');
+
+  const removeBtn = document.createElement('img');
+  const readBtn = document.createElement('input');
   //------------------------------
   // Altera o status do livro
   //------------------------------
+
   readBtn.classList.add('readBtn');
   readBtn.setAttribute('class', 'readBtn');
   readBtn.setAttribute('type', 'checkbox');
